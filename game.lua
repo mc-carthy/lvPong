@@ -1,15 +1,21 @@
 Game = Object:extend()
 
 function Game:new()
-    self.pad = Pad()
+    self.padLeft = Pad()
+    self.padLeft.keyUp = 'w'
+    self.padLeft.keyDown = 's'
+    self.padRight = Pad()
+    self.padRight.x = 740
 end
 
 function Game:update(dt)
-    self.pad:update(dt)
+    self.padLeft:update(dt)
+    self.padRight:update(dt)
 end
 
 function Game:draw()
-    self.pad:draw()
+    self.padLeft:draw()
+    self.padRight:draw()
 end
 
 return Game
