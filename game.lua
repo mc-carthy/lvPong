@@ -13,6 +13,8 @@ function Game:update(dt)
     self.padLeft:update(dt)
     self.padRight:update(dt)
     self.ball:update(dt)
+    self.ball:bounce(self.padLeft)
+    self.ball:bounce(self.padRight)
 end
 
 function Game:draw()

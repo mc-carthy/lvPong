@@ -17,8 +17,8 @@ function Entity:update(dt)
         self.y = 0
         self.ySpeed = -self.ySpeed
     elseif self.y + self.height >= 600 then
-        self.y = 0
         self.y = 600 - self.height
+        self.ySpeed = -self.ySpeed
     end
 end
 
