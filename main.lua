@@ -1,21 +1,19 @@
 function love.load()
     Object = require('classic')
-    Shape = require('shape')
-    Rectangle = require('rectangle')
-    Circle = require('circle')
+    Game = require('game')
+    Entity = require('entity')
+    Pad = require('pad')
+    Ball = require('ball')
 
-    r1 = Rectangle(100, 20, 50, 300)
-    c1 = Circle(150, 300, 50)
+    game = Game()
 end
 
 function love.update(dt)
-    r1:update(dt)
-    c1:update(dt)
+    game:update(dt)
 end
 
 function love.draw()
-    r1:draw()
-    c1:draw()
+    game:draw()
 end
 
 function love.keypressed(key)
