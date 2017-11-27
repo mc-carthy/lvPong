@@ -30,4 +30,14 @@ function Ball:bounce(e)
     end
 end
 
+function Ball:outOfBounds()
+    if self.x + self.width < 0 then
+        return "left"
+    elseif self.x > love.graphics.getWidth() then
+        return "right"
+    else
+        return false
+    end
+end
+
 return Ball
