@@ -2,12 +2,28 @@ Ball = Entity:extend()
 
 function Ball:new()
     Ball.super.new(self, 400, 300, 15, 15)
-    self.xSpeed = 400
-    self.ySpeed = -500
+
+    if math.random(1, 2) == 1 then
+        self.xSpeed = 400
+    else
+        self.xSpeed = -400
+    end
+
+    if math.random(1, 2) == 1 then
+        self.ySpeed = 500
+    else
+        self.ySpeed = -500
+    end
+
+    self.timer = 1
 end
 
 function Ball:update(dt)
-    Ball.super.update(self, dt)
+    if self.timer > 0 then
+        self.timer = self.timer - dt
+    else
+        Ball.super.update(self, dt)
+    end
 end
 
 function Ball:draw()

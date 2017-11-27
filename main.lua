@@ -17,4 +17,7 @@ function love.draw()
 end
 
 function love.keypressed(key)
+    if key == "r" then
+        love.load()
+    end
 end
